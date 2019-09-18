@@ -337,9 +337,9 @@ $section_p: 70px
 
 .categories
 	&__layout
-		display: grid
+		+dg
 		grid-auto-flow: column
-		grid-gap: 10px
+		+ggap(10px)
 		+r(570)
 			display: block
 	&__item
@@ -382,10 +382,10 @@ $section_p: 70px
 
 .news
 	&__layout
-		display: grid
-		grid-template-columns: 1fr 1fr
+		+dg
+		+gcol(2, 1fr)
 		+r(768)
-			grid-template-columns: 1fr
+			+gcol(1, 1fr)
 	&__image
 		+pr
 		min-height: 600px
@@ -455,13 +455,13 @@ $section_p: 70px
 
 .shopcart
 	&__layout
-		display: grid
-		grid-template-columns: 1fr 1fr 1fr
-		grid-gap: 10px
+		+dg
+		+gcol(3, 1fr)
+		+ggap(10px)
 		+r(768)
-			grid-template-columns: 1fr 1fr
+			+gcol(2, 1fr)
 		+r(570)
-			grid-template-columns: 1fr
+			+gcol(1, 1fr)
 	&__item,
 	&__image
 		min-height: 400px
@@ -602,9 +602,9 @@ $section_p: 70px
 		display: block
 		max-width: 100%
 	&__layout
-		display: grid
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
-		grid-gap: 10px
+		+dg
+		+gcol(6, 1fr)
+		+ggap(10px)
 	&__item
 		filter: grayscale(60%)
 		transition: filter $t linear
