@@ -1,0 +1,50 @@
+$output-bourbon-deprecation-warnings: false
+@import bourbon
+@import src/_fonts
+@import src/_vars
+@import src/_func
+
+[class^="tf-"],
+[class*=" tf-"]
+	font-family: $ic
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+@import lib/_icon-font.sass
+
+ol, ul
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+// html
+// 	font-size: calc(1em + 1vw)
+
+html, body
+	height: 100%
+
+body
+	height: 100%
+	margin: 0
+	padding: 0
+	background: $bg
+	font-family: $sans
+	font-weight: 300
+
+@import src/_preloader

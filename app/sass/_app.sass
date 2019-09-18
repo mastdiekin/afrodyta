@@ -1,0 +1,658 @@
+body
+	&::-webkit-scrollbar-track
+		border-radius: 10px
+		background-color: $w
+
+	&::-webkit-scrollbar
+		width: 7px
+		background-color: $w
+
+	&::-webkit-scrollbar-thumb
+		background-color: $b
+
+*
+	box-sizing: border-box
+
+a
+	text-decoration: none
+	color: $b
+	&:hover
+		color: $main
+
+ul,
+ol,
+p
+	margin: 0
+	padding: 0
+
+.btn
+	min-width: 150px
+	min-height: 20px
+	padding: 5px 10px
+	border-radius: 20px
+	text-transform: uppercase
+	+df
+	+cc
+	box-shadow: 0px 0px 15px 0px rgba($b, .2)
+	transition: $t linear
+	&:hover
+		box-shadow: none
+		color: $b
+	&.fill
+		background: $main
+	&.white
+		background: $w
+
+.up
+	+pf
+	bottom: 15px
+	right: 15px
+	z-index: 80
+	background: #EFEFEF
+	color: $b
+	+df
+	+cc
+	width: 35px
+	height: 35px
+	cursor: pointer
+	outline: none
+	border: 0
+	opacity: 0
+	visibility: hidden
+	transition: $t linear
+	&.is--active
+		opacity: 1
+		visibility: visible
+
+$content: 1110px
+.content
+	max-width: $content
+	padding: 0 15px
+	margin: 0 auto
+
+.cart
+	+pf
+	right: 0
+	top: 0
+	bottom: 0
+	width: 320px
+	background: $w
+	box-shadow: -10px 0px 13px -10px rgba(0,0,0,0.15)
+	transform: translate(100%, 0)
+	opacity: 0
+	display: none
+	z-index: 101
+	&__top
+		padding: 0 15px
+		margin-top: 45px
+		height: 100vh
+		max-height: calc(100vh - 115px - 45px)
+		overflow-y: auto
+		&::-webkit-scrollbar-track
+			border-radius: 10px
+			background-color: $w
+
+		&::-webkit-scrollbar
+			width: 7px
+			background-color: $w
+
+		&::-webkit-scrollbar-thumb
+			background-color: $b
+	&__bottom
+		+pa
+		bottom: 0
+		left: 0
+		right: 0
+		background: $w
+	&__count
+		padding: 15px
+		font-size: 20px
+		color: shade(#DEDEDE, 30%)
+		text-align: center
+	&__buttons
+		+df
+		justify-content: space-between
+		a
+			display: block
+			width: 50%
+			padding: 10px
+			text-align: center
+			background: $b
+			color: $w
+			transition: $t linear
+			&.cart__clear
+				background: $w
+				color: $b
+				&:hover
+					background: lighten($b, 30%)
+					color: $w
+			&:hover
+				color: $b
+				background: $w
+	&__close
+		+pa
+		top: 0
+		right: 0
+		width: 40px
+		height: 40px
+		font-size: 30px
+		background-color: transparent
+		border: 0
+		cursor: pointer
+		outline: none
+	&__item
+		+df
+		justify-content: space-between
+		margin-bottom: 30px
+		+pr
+		&:before
+			+c
+			+pa
+			left: 10%
+			right: 10%
+			bottom: -15px
+			background: #F6F6F6
+			height: 1px
+	&__image
+		width: 30%
+		img
+			max-width: 100%
+	&__info
+		width: 70%
+		padding-left: 15px
+		+pr
+	&__itemprice
+		color: #9E9E9E
+		font-size: 80%
+	&__itemremove
+		+pa
+		right: 0
+		top: 0
+		width: 30px
+		height: 30px
+		background-color: #F6F6F6
+		border: 0
+		cursor: pointer
+		outline: none
+		transition: $t linear
+		&:hover
+			background-color: $b
+			color: $w
+
+.header
+	&__top
+		min-height: 90px
+		+df
+		justify-content: space-between
+		+cv
+		+pr
+		&:before
+			+c
+			+pa
+			bottom: 0
+			left: 0
+			right: 0
+			height: 1px
+			background: #DEDEDE
+		&-wrapper
+			+pr
+		&-content
+			+pa
+			left: 0
+			right: 0
+			width: 100%
+			transition: $t linear
+			background: $w
+			&.is--slided
+				+pf
+				top: 0
+				z-index: 100
+			&.is--shadowed
+				box-shadow: 0px 33px 23px -32px rgba(0,0,0,0.55)
+				.header__top
+					&:before
+						display: none
+	&__bottom
+		&-content
+			padding-top: 90px
+	&__contacts
+		+r(570)
+			display: none
+		i
+			margin-right: 5px
+	&__contacts,
+	&__buttons
+		width: 40%
+	&__logo
+		display: block
+		width: 20%
+		text-align: center
+		+r(570)
+			width: 30%
+		img
+			display: inline-block
+	&__buttons
+		text-align: right
+		+r(570)
+			width: 70%
+		a
+			margin-right: 30px
+		a,
+		.header__language
+			display: inline-block
+			i
+				margin-right: 5px
+	&__cart
+		i
+			transition: transform .3s linear
+			display: inline-block
+		&.is--active
+			color: $main
+			i
+				transform: rotate(-35deg)
+	&__menu
+		text-align: center
+		ul
+			li
+				display: inline-block
+				a
+					text-transform: uppercase
+					display: block
+					padding: 40px 25px
+					+r(570)
+						padding: 10px 14px
+	&__search
+		&-form
+			+pa
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 1
+			display: none
+			opacity: 0
+			form
+				display: block
+				height: 100%
+				input
+					display: block
+					width: 100%
+					height: calc(100% - 3px)
+					border: 0
+					background: $w
+					outline: none
+					font: 300 30px $sans
+		&-close
+			+pa
+			top: 0
+			bottom: 0
+			right: 0
+			width: 80px
+			font-size: 30px
+			background-color: transparent
+			border: 0
+			cursor: pointer
+			outline: none
+			text-align: right
+	&__language
+		+pr
+		margin-right: 10px
+		&:before
+			content: '\f3d0'
+			font-family: $ic
+			+pa
+			right: -8px
+			top: 5px
+			font-size: 10px
+		select
+			outline: none
+			border: 0
+			-webkit-appearance: none
+			-moz-appearance: none
+			cursor: pointer
+			color: $b
+			font-family: $sans !important
+			font-weight: 300 !important
+
+$section_p: 70px
+.section
+	padding-bottom: $section_p
+	&:first-of-type
+		padding-top: $section_p*1.5
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+		margin-top: 0
+	+r(768)
+		padding-bottom: $section_p/2
+	&__title
+		font-size: 20px
+		text-transform: uppercase
+		text-align: center
+		color: #333
+		font-weight: normal
+
+.categories
+	&__layout
+		display: grid
+		grid-auto-flow: column
+		grid-gap: 10px
+		+r(570)
+			display: block
+	&__item
+		width: 100%
+		height: 100%
+		display: block
+		+pr
+		+r(570)
+			min-height: 300px
+			margin-bottom: 10px
+		a
+			display: block
+			+pa
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			overflow: hidden
+			&:hover
+				color: $b
+				.categories__image
+					transform: scale(1.1, 1.1)
+		&.big
+			grid-column: 2
+			grid-row: 1 / 3
+			min-height: 730px
+	&__image
+		+pa
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		transition: transform $t2/2 linear
+	&__info
+		+pr
+		z-index: 1
+		padding: 30px
+	&__viewmore
+		color: #6C6C6C
+
+.news
+	&__layout
+		display: grid
+		grid-template-columns: 1fr 1fr
+		+r(768)
+			grid-template-columns: 1fr
+	&__image
+		+pr
+		min-height: 600px
+		a
+			+pa
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+	&__info
+		+df
+		+cg
+		flex-direction: column
+		+pr
+		&:before
+			+c
+			+pa
+			z-index: 0
+			top: 50%
+			height: 70%
+			left: 0
+			right: 20%
+			transform: translate(0, -50%)
+			background: #F6F6F6
+			+r(768)
+				top: 0
+				left: 50%
+				width: 80%
+				right: auto
+				bottom: 5%
+				height: auto
+				transform: translate(-50%, 0)
+	&__title
+		text-align: right
+		font-weight: bold
+		font-size: 40px
+		line-height: 37px
+		text-transform: uppercase
+		z-index: 1
+	&__text
+		+pr
+		z-index: 1
+		padding: 10px
+		p
+			padding: 10px 0
+	&__readmore
+		margin-top: 30px
+		display: inline-block
+		font-weight: bold
+
+.register
+	&__image
+		min-height: 260px
+		+df
+		+cc
+		flex-direction: column
+	&__info
+		color: $w
+		text-transform: uppercase
+		font-weight: bold
+		text-shadow: 0px 0px 2px $b
+		font-size: 40px
+		margin-bottom: 15px
+		text-align: center
+		+r(570)
+			font-size: 20px
+
+.shopcart
+	&__layout
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		grid-gap: 10px
+		+r(768)
+			grid-template-columns: 1fr 1fr
+		+r(570)
+			grid-template-columns: 1fr
+	&__item,
+	&__image
+		min-height: 400px
+		overflow: hidden
+	&__image
+		+pr
+		&:before
+			+c
+			+pa
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: $b
+			opacity: 0
+			transition: $t linear
+		&:hover
+			&:before
+				opacity: .3
+			.shopcart__buttons
+				transform: translate(-50%, -10px)
+				a
+					opacity: 1
+					transform: translate(0, 0)
+					&:nth-of-type(1)
+						transition-delay: .2s
+					&:nth-of-type(2)
+						transition-delay: .4s
+					&:nth-of-type(3)
+						transition-delay: .6s
+	&__buttons
+		+pa
+		bottom: 0
+		left: 50%
+		transform: translate(-50%, 40px)
+		transition: $t linear
+		transition-delay: $t
+		+df
+		+r(570)
+			transform: translate(-50%, -20px)
+			transition: none
+		a
+			+df
+			+cc
+			color: $w
+			background: $b
+			width: 50px
+			height: 50px
+			margin-right: 10px
+			font-size: 20px
+			transition: $t linear
+			opacity: 0
+			transform: translate(0, 10px)
+			+r(570)
+				opacity: 1
+				transition: none
+			&:last-child
+				margin-right: 0
+			&:hover
+				background: $w
+				color: $b
+				transition-delay: 0s !important
+	&__info
+		text-align: center
+		padding: 15px
+	&__price
+		color: #6C6C6C
+	&__title
+		margin-bottom: 5px
+	&__label
+		+pa
+		right: 10px
+		top: 10px
+		background: $b
+		color: $w
+		padding: 5px
+
+.newsletter
+	background: #F9F9F9
+	padding-top: $section_p
+	margin-bottom: $section_p
+	+r(768)
+		padding-top: $section_p/2
+		margin-bottom: $section_p/2
+	&__info
+		color: #757575
+		max-width: 600px
+		margin: 0 auto 30px
+		text-align: center
+	&__form
+		max-width: 550px
+		margin: 0 auto
+		form
+			width: 100%
+			+df
+			justify-content: space-between
+			+r(480)
+				display: block
+			input,
+			button
+				display: block
+				border: 1px solid transparent
+				background-color: transparent
+				min-height: 37px
+				transition: $t linear
+				outline: none
+				+r(570)
+					width: 50%
+					text-align: center
+				+r(480)
+					width: 100%
+			input
+				width: 65%
+				border-color: #ccc
+				background: $w
+				padding-left: 15px
+				+placeholder
+					color: #ccc
+				&:focus
+					border-color: $b
+			button
+				width: 35%
+				cursor: pointer
+				background: $b
+				color: $w
+				border-left: 0
+				text-transform: uppercase
+				+r(480)
+					border-left: 1px solid $b
+					border-top: 0
+				&:hover
+					background: $w
+					color: $b
+					border-color: #ccc
+
+.instagram
+	img
+		display: block
+		max-width: 100%
+	&__layout
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+		grid-gap: 10px
+	&__item
+		filter: grayscale(60%)
+		transition: filter $t linear
+		&:hover
+			filter: none
+
+.footer
+	background: #F9F9F9
+	color: $b
+	padding: $section_p 0
+	+r(768)
+		padding: $section_p/2 0
+	&__social
+		margin-bottom: 15px
+		ul
+			+df
+			+cc
+			li
+				display: inline-block
+				margin-right: 10px
+				&:last-child
+					margin-right: 0
+				a
+					color: $b
+					background: #F9F9F9
+					width: 30px
+					height: 30px
+					+df
+					+cc
+					font-size: 16px
+					transition: $t linear
+					&:hover
+						background: $b
+						color: #F9F9F9
+	&__menu
+		margin-bottom: 15px
+		ul
+			+df
+			+cc
+			+r(570)
+				flex-wrap: wrap
+			li
+				a
+					color: $b
+					display: block
+					padding: 5px 15px
+					text-transform: uppercase
+					&:hover
+						color: $main
+	&__copy
+		text-align: center

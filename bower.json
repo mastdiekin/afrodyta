@@ -1,0 +1,11 @@
+{
+  "name": "afrodyta",
+  "description": "shop theme for 1c bitrix",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "waypoints": "^4.0.1",
+    "svg4everybody": "^2.1.9",
+    "jquery": "^3.3.1"
+  }
+}
